@@ -34,3 +34,9 @@ No credential interception, exploitation, or offensive testing is performed.
 4. Hardening (actions + rationale)
 5. Validation (before/after evidence)
 6. Monitoring (local reporting, optional alerts)
+
+## Branching model
+
+- `main` contains the stable, merged content.
+- Each phase is developed in a `feature/phase-XX-*` branch and then squash-merged into `main`.
+- Feature branches are kept for traceability and learning purposes.
