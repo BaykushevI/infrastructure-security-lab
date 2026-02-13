@@ -1,0 +1,8 @@
+# Raw scan outputs (private)
+evidence/raw/
+
+# Local environment overrides
+*.local.yaml
+
+# macOS
+.DS_Store
