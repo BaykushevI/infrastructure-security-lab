@@ -13,4 +13,12 @@ text = re.sub(
     text,
 )
 
+# Remove service version fingerprints from Nmap "-sV" output lines.
+# Keep: "<port>/<proto>  open  <service>"
+text = re.sub(
+    r"(?m)^(\d+/(?:tcp|udp)\s+open\s+\S+)\s+.*$",
+    r"\1",
+    text
+)
+
 sys.stdout.write(text)
