@@ -1,0 +1,4 @@
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-13 16:01 +0200
+Stats: 0:03:17 elapsed; 0 hosts completed (0 up), 256 undergoing Ping Scan
+Ping Scan Timing: About 82.03% done; ETC: 16:05 (0:00:43 remaining)
+Nmap done: 256 IP addresses (0 hosts up) scanned in 235.79 seconds
