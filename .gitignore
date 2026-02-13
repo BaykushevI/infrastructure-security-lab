@@ -6,3 +6,5 @@ evidence/raw/
 
 # macOS
 .DS_Store
+
+.venv/
