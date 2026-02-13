@@ -1,3 +1,80 @@
-Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-13 16:06 +0200
-Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn
-Nmap done: 1 IP address (0 hosts up) scanned in 3.12 seconds
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-13 16:14 +0200
+Nmap scan report for 192.168.X.1
+Host is up (1.0s latency).
+Not shown: 994 closed tcp ports (conn-refused)
+PORT     STATE SERVICE   VERSION
+22/tcp   open  ssh       Dropbear sshd 2020.80 (protocol 2.0)
+23/tcp   open  telnet    BusyBox telnetd 1.14.0 or later (TP-LINK router telnetd)
+53/tcp   open  domain    dnsmasq 2.85
+80/tcp   open  http
+443/tcp  open  ssl/https
+1900/tcp open  upnp      Portable SDK for UPnP devices 1.6.19 (Linux 4.4.198; UPnP 1.0)
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.98%I=7%D=2/13%Time=698F32CD%P=arm-apple-darwin25.2.0%r(G
+SF:etRequest,8BAE,"HTTP/1\.1\x20200\x20OK\r\nContent-Type:\x20text/html;\x
+SF:20charset=utf-8\r\nX-Frame-Options:\x20SAMEORIGIN\r\nContent-Security-P
+SF:olicy:\x20frame-ancestors\x20'none'\r\nContent-Length:\x2043597\r\nX-Fr
+SF:ame-Options:\x20SAMEORIGIN\r\nSet-Cookie:\x20JSESSIONID=deleted;\x20Exp
+SF:ires=Thu,\x2001\x20Jan\x201970\x2000:00:01\x20GMT;\x20Path=/;\x20HttpOn
+SF:ly\r\nConnection:\x20keep-alive\r\n\r\n<!DOCTYPE\x20html\x20PUBLIC\x20\
+SF:"-//W3C//DTD\x20XHTML\x201\.0\x20Transitional//EN\"\x20\"http://www\.w3
+SF:\.org/TR/xhtml1/DTD/xhtml1-transitional\.dtd\"><html\x20xmlns=\"http://
+SF:www\.w3\.org/1999/xhtml\"\x20xml:lang=\"en\"\x20lang=\"en\"><meta\x20ht
+SF:tp-equiv=\"Content-Type\"\x20content=\"text/html;\x20charset=utf-8\"><h
+SF:ead><link\x20rel=\"shortcut\x20icon\"\x20type=\"image/x-icon\"\x20href=
+SF:\"\.\./img/favicon\.ico\"><link\x20rel=\"stylesheet\"\x20href=\"\.\./cs
+SF:s/main\.css\"><link\x20rel=\"stylesheet\"\x20href=\"\.\./css/login\.css
+SF:\"><link\x20rel=\"stylesheet\"\x20href=\"\.\./css/jquery\.tpInput\.css\
+SF:"><script\x20src=\"\.\./js/jquery-1\.8\.3\.min\.js\"\x20type=\"text/jav
+SF:ascript\"></script><script\x20src=\"\.\./js/lib\.js\"\x20type=\"text/ja
+SF:vasc")%r(HTTPOptions,159,"HTTP/1\.1\x20406\x20Not\x20Acceptable\r\nCont
+SF:ent-Type:\x20text/html;\x20charset=utf-8\r\nContent-Length:\x20116\r\nX
+SF:-Frame-Options:\x20SAMEORIGIN\r\nSet-Cookie:\x20JSESSIONID=deleted;\x20
+SF:Expires=Thu,\x2001\x20Jan\x201970\x2000:00:01\x20GMT;\x20Path=/;\x20Htt
+SF:pOnly\r\nConnection:\x20close\r\n\r\n<html><head><title>406\x20Not\x20A
+SF:cceptable</title></head><body><center><h1>406\x20Not\x20Acceptable</h1>
+SF:</center></body></html>")%r(RTSPRequest,159,"HTTP/1\.1\x20406\x20Not\x2
+SF:0Acceptable\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nContent-
+SF:Length:\x20116\r\nX-Frame-Options:\x20SAMEORIGIN\r\nSet-Cookie:\x20JSES
+SF:SIONID=deleted;\x20Expires=Thu,\x2001\x20Jan\x201970\x2000:00:01\x20GMT
+SF:;\x20Path=/;\x20HttpOnly\r\nConnection:\x20close\r\n\r\n<html><head><ti
+SF:tle>406\x20Not\x20Acceptable</title></head><body><center><h1>406\x20Not
+SF:\x20Acceptable</h1></center></body></html>");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.98%T=SSL%I=7%D=2/13%Time=698F32D4%P=arm-apple-darwin25.
+SF:2.0%r(GetRequest,1000,"HTTP/1\.1\x20200\x20OK\r\nContent-Type:\x20text/
+SF:html;\x20charset=utf-8\r\nX-Frame-Options:\x20SAMEORIGIN\r\nContent-Sec
+SF:urity-Policy:\x20frame-ancestors\x20'none'\r\nContent-Length:\x2043597\
+SF:r\nX-Frame-Options:\x20SAMEORIGIN\r\nSet-Cookie:\x20JSESSIONID=deleted;
+SF:\x20Expires=Thu,\x2001\x20Jan\x201970\x2000:00:01\x20GMT;\x20Path=/;\x2
+SF:0HttpOnly\r\nConnection:\x20keep-alive\r\n\r\n<!DOCTYPE\x20html\x20PUBL
+SF:IC\x20\"-//W3C//DTD\x20XHTML\x201\.0\x20Transitional//EN\"\x20\"http://
+SF:www\.w3\.org/TR/xhtml1/DTD/xhtml1-transitional\.dtd\"><html\x20xmlns=\"
+SF:http://www\.w3\.org/1999/xhtml\"\x20xml:lang=\"en\"\x20lang=\"en\"><met
+SF:a\x20http-equiv=\"Content-Type\"\x20content=\"text/html;\x20charset=utf
+SF:-8\"><head><link\x20rel=\"shortcut\x20icon\"\x20type=\"image/x-icon\"\x
+SF:20href=\"\.\./img/favicon\.ico\"><link\x20rel=\"stylesheet\"\x20href=\"
+SF:\.\./css/main\.css\"><link\x20rel=\"stylesheet\"\x20href=\"\.\./css/log
+SF:in\.css\"><link\x20rel=\"stylesheet\"\x20href=\"\.\./css/jquery\.tpInpu
+SF:t\.css\"><script\x20src=\"\.\./js/jquery-1\.8\.3\.min\.js\"\x20type=\"t
+SF:ext/javascript\"></script><script\x20src=\"\.\./js/lib\.js\"\x20type=\"
+SF:text/javasc")%r(HTTPOptions,159,"HTTP/1\.1\x20406\x20Not\x20Acceptable\
+SF:r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nContent-Length:\x201
+SF:16\r\nX-Frame-Options:\x20SAMEORIGIN\r\nSet-Cookie:\x20JSESSIONID=delet
+SF:ed;\x20Expires=Thu,\x2001\x20Jan\x201970\x2000:00:01\x20GMT;\x20Path=/;
+SF:\x20HttpOnly\r\nConnection:\x20close\r\n\r\n<html><head><title>406\x20N
+SF:ot\x20Acceptable</title></head><body><center><h1>406\x20Not\x20Acceptab
+SF:le</h1></center></body></html>")%r(FourOhFourRequest,1A7,"HTTP/1\.1\x20
+SF:406\x20Not\x20Acceptable\r\nContent-Type:\x20text/html;\x20charset=utf-
+SF:8\r\nX-Frame-Options:\x20SAMEORIGIN\r\nContent-Security-Policy:\x20fram
+SF:e-ancestors\x20'none'\r\nContent-Length:\x20116\r\nX-Frame-Options:\x20
+SF:SAMEORIGIN\r\nSet-Cookie:\x20JSESSIONID=deleted;\x20Expires=Thu,\x2001\
+SF:x20Jan\x201970\x2000:00:01\x20GMT;\x20Path=/;\x20HttpOnly\r\nConnection
+SF::\x20close\r\n\r\n<html><head><title>406\x20Not\x20Acceptable</title></
+SF:head><body><center><h1>406\x20Not\x20Acceptable</h1></center></body></h
+SF:tml>");
+Service Info: OS: Linux; Device: broadband router; CPE: cpe:/o:linux:linux_kernel, cpe:/o:linux:linux_kernel:4.4.198
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 400.71 seconds
