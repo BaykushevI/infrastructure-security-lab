@@ -1,6 +1,78 @@
-Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-13 16:14 +0200
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-14 17:28 +0200
+Stats: 0:00:05 elapsed; 0 hosts completed (1 up), 1 undergoing Connect Scan
+Connect Scan Timing: About 40.60% done; ETC: 17:28 (0:00:06 remaining)
+Stats: 0:00:10 elapsed; 0 hosts completed (1 up), 1 undergoing Connect Scan
+Connect Scan Timing: About 82.45% done; ETC: 17:28 (0:00:02 remaining)
+Stats: 0:00:17 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 33.33% done; ETC: 17:28 (0:00:10 remaining)
+Stats: 0:00:21 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:28 (0:00:05 remaining)
+Stats: 0:00:27 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:28 (0:00:08 remaining)
+Stats: 0:00:30 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:28 (0:00:10 remaining)
+Stats: 0:00:38 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:29 (0:00:14 remaining)
+Stats: 0:00:41 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:29 (0:00:15 remaining)
+Stats: 0:00:45 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:29 (0:00:17 remaining)
+Stats: 0:00:53 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:29 (0:00:21 remaining)
+Stats: 0:00:56 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:29 (0:00:23 remaining)
+Stats: 0:01:01 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:29 (0:00:25 remaining)
+Stats: 0:01:06 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:29 (0:00:28 remaining)
+Stats: 0:01:12 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:29 (0:00:31 remaining)
+Stats: 0:01:15 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:30 (0:00:32 remaining)
+Stats: 0:01:20 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:30 (0:00:35 remaining)
+Stats: 0:01:27 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:30 (0:00:38 remaining)
+Stats: 0:01:32 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:30 (0:00:41 remaining)
+Stats: 0:01:37 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 66.67% done; ETC: 17:30 (0:00:43 remaining)
+Stats: 0:01:40 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:30 (0:00:18 remaining)
+Stats: 0:01:45 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:30 (0:00:19 remaining)
+Stats: 0:01:50 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:30 (0:00:20 remaining)
+Stats: 0:01:59 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:30 (0:00:21 remaining)
+Stats: 0:02:04 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:30 (0:00:23 remaining)
+Stats: 0:02:09 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:30 (0:00:24 remaining)
+Stats: 0:02:14 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:30 (0:00:25 remaining)
+Stats: 0:02:19 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:30 (0:00:26 remaining)
+Stats: 0:02:25 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:31 (0:00:27 remaining)
+Stats: 0:02:30 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:31 (0:00:28 remaining)
+Stats: 0:02:35 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:31 (0:00:29 remaining)
+Stats: 0:02:40 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:31 (0:00:30 remaining)
+Stats: 0:02:45 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:31 (0:00:31 remaining)
+Stats: 0:02:50 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 83.33% done; ETC: 17:31 (0:00:32 remaining)
+Stats: 0:02:55 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 100.00% done; ETC: 17:31 (0:00:00 remaining)
+Stats: 0:02:56 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 97.46% done; ETC: 17:31 (0:00:00 remaining)
+Stats: 0:03:01 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 97.83% done; ETC: 17:31 (0:00:00 remaining)
 Nmap scan report for 192.168.X.1
-Host is up (1.0s latency).
+Host is up (0.056s latency).
 Not shown: 994 closed tcp ports (conn-refused)
 PORT     STATE SERVICE   VERSION
 22/tcp   open  ssh
@@ -10,8 +82,8 @@ PORT     STATE SERVICE   VERSION
 1900/tcp open  upnp
 2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port80-TCP:V=7.98%I=7%D=2/13%Time=698F32CD%P=arm-apple-darwin25.2.0%r(G
-SF:etRequest,8BAE,"HTTP/1\.1\x20200\x20OK\r\nContent-Type:\x20text/html;\x
+SF-Port80-TCP:V=7.98%I=7%D=2/14%Time=6990949F%P=arm-apple-darwin25.2.0%r(G
+SF:etRequest,6F66,"HTTP/1\.1\x20200\x20OK\r\nContent-Type:\x20text/html;\x
 SF:20charset=utf-8\r\nX-Frame-Options:\x20SAMEORIGIN\r\nContent-Security-P
 SF:olicy:\x20frame-ancestors\x20'none'\r\nContent-Length:\x2043597\r\nX-Fr
 SF:ame-Options:\x20SAMEORIGIN\r\nSet-Cookie:\x20JSESSIONID=deleted;\x20Exp
@@ -41,7 +113,7 @@ SF:;\x20Path=/;\x20HttpOnly\r\nConnection:\x20close\r\n\r\n<html><head><ti
 SF:tle>406\x20Not\x20Acceptable</title></head><body><center><h1>406\x20Not
 SF:\x20Acceptable</h1></center></body></html>");
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port443-TCP:V=7.98%T=SSL%I=7%D=2/13%Time=698F32D4%P=arm-apple-darwin25.
+SF-Port443-TCP:V=7.98%T=SSL%I=7%D=2/14%Time=699094A6%P=arm-apple-darwin25.
 SF:2.0%r(GetRequest,1000,"HTTP/1\.1\x20200\x20OK\r\nContent-Type:\x20text/
 SF:html;\x20charset=utf-8\r\nX-Frame-Options:\x20SAMEORIGIN\r\nContent-Sec
 SF:urity-Policy:\x20frame-ancestors\x20'none'\r\nContent-Length:\x2043597\
@@ -76,4 +148,4 @@ SF:tml>");
 Service Info: OS: Linux; Device: broadband router; CPE: cpe:/o:linux:linux_kernel, cpe:/o:linux:linux_kernel:4.4.198
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 400.71 seconds
+Nmap done: 1 IP address (1 host up) scanned in 183.92 seconds
