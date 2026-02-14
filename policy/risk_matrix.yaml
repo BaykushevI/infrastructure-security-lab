@@ -1,0 +1,51 @@
+services:
+
+  - port: 23
+    service: telnet
+    impact: 5
+    likelihood: 4
+    score: 20
+    severity: critical
+    rationale: >
+      Plaintext admin protocol. Common brute-force vector.
+      Enables full router compromise and lateral movement.
+
+  - port: 1900
+    service: upnp
+    impact: 4
+    likelihood: 3
+    score: 12
+    severity: high
+    rationale: >
+      Allows automatic port mappings.
+      Can be abused by compromised LAN devices.
+
+  - port: 80
+    service: http_admin
+    impact: 4
+    likelihood: 3
+    score: 12
+    severity: high
+    rationale: >
+      Router admin surface. Risk depends on authentication strength
+      and firmware patch level.
+
+  - port: 22
+    service: ssh
+    impact: 3
+    likelihood: 2
+    score: 6
+    severity: medium
+    rationale: >
+      Legitimate admin channel. Must be restricted to LAN
+      and hardened with strong credentials or keys.
+
+  - port: 53
+    service: dns
+    impact: 3
+    likelihood: 3
+    score: 9
+    severity: medium
+    rationale: >
+      Core infrastructure service.
+      DNS poisoning or compromise can impact entire LAN.
