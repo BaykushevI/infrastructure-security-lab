@@ -1,0 +1,21 @@
+zones:
+  trusted:
+    subnet: 192.168.10.0/24
+    description: Work and personal devices
+
+  iot:
+    subnet: 192.168.20.0/24
+    description: Smart devices, TVs, cameras
+
+  guest:
+    subnet: 192.168.30.0/24
+    description: Guest WiFi
+
+rules:
+  - from: iot
+    to: trusted
+    should_connect: false
+
+  - from: guest
+    to: trusted
+    should_connect: false

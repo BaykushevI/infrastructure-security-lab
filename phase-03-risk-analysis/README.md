@@ -1,105 +1,185 @@
-# Phase 03 – Risk Analysis
+Phase 03 – Risk Analysis & Segmentation Validation
 
-Goal: convert enumeration evidence into a practical risk view and a prioritized hardening backlog.
+Executive Summary
 
-Input comes from Phase 02 (`evidence/sanitized/*`, reports, and observed behavior).  
-Output is a prioritized plan for Phase 04 (Hardening) and Phase 05 (Monitoring).
+This phase converts technical enumeration findings (Phase 02) into a structured risk view for a home network environment.
 
-## Scope
-- Identify exposed services on the router and key clients
-- Map findings to realistic threats (home context)
-- Assess impact/likelihood
-- Produce a prioritized backlog (what to fix first and why)
-- Define what “good” looks like (target state)
+Key findings:
+	•	Router exposes legacy administrative services (Telnet)
+	•	UPnP is enabled and increases lateral exposure risk
+	•	Guest isolation is enforced via firewall rules (validated)
+	•	No VLAN-based segmentation available on the router model (TP-Link EX220)
 
-## Inputs (Evidence)
+Overall posture: Moderate risk, high improvement potential
+
+⸻
+
+1️⃣ Evidence Inputs
+
 From Phase 02:
-- `evidence/sanitized/router_sV.txt` – router service enumeration (LAN-side)
-- `evidence/sanitized/lan_hosts.txt` – LAN discovery (sanitized)
-- `evidence/sanitized/reports/policy_report.md` – policy violations summary
+	•	evidence/sanitized/router_sV.txt
+	•	evidence/sanitized/lan_hosts.txt
+	•	evidence/sanitized/reports/policy_report.md
 
-Observations:
-- Phone responsiveness changes while locked / power saving
-- Router UI shows connected clients (expected in home networks)
+Additional validation:
+	•	Manual segmentation testing from Guest SSID
+	•	ARP and Nmap validation
+	•	Behavioral observation (device responsiveness)
 
-Note: raw evidence stays gitignored under `evidence/raw/`.
+⸻
 
-## Key Findings (current)
+2️⃣ Current Network Architecture
 
-### Router exposed services (LAN-side)
-| Port | Service | Why it matters | Risk |
-|------|---------|----------------|------|
-| 23/tcp | Telnet | plaintext admin surface; often weak/default creds; sniffable on LAN | High |
-| 1900/tcp | UPnP | auto-exposure of services; can be abused for lateral movement or unwanted port mapping | Medium–High |
-| 22/tcp | SSH (Dropbear) | legit admin channel but must be locked down; brute-force surface if reachable | Medium |
-| 53/tcp | DNS (dnsmasq) | core infra component; poisoning/misconfig risks; LAN visibility | Medium |
-| 80/443 | HTTP/HTTPS | admin UI attack surface; depends on auth/firmware/TLS | Medium |
+Router: TP-Link EX220 (AX1800)
 
-## Threat Modeling (home context)
+Topology:
+Internet
+   │
+[Router]
+   ├── Main LAN (192.168.0.0/24)
+   ├── Guest SSID (firewall isolated)
+   └── NAT to WAN
 
-### Assets (what we protect)
-- Work laptop: company data, credentials, VPN, email
-- Personal Mac: passwords, banking, photos, backups
-- Phones: MFA, iCloud/Google accounts, messages
-- IoT: weakest devices, often never patched
+Important:
+	•	Single subnet
+	•	No VLAN separation
+	•	Guest isolation implemented via firewall policy (Layer 3 control)
 
-### Trust zones
-- Trusted: work + personal
-- Semi-trusted: phones/tablets
-- Untrusted / high-risk: IoT, guests
+                         Internet
+                             │
+                             │ (NAT)
+                    ┌──────────────────┐
+                    │  TP-Link EX220   │
+                    │  192.168.0.1     │
+                    └──────────────────┘
+                       │          │
+         ┌─────────────┘          └───────────────┐
+         │                                         │
+   Main LAN (192.168.0.0/24)                 Guest SSID
+   Flat network                               Firewall isolated
+   ├── Mac (trusted)                          └── Internet only
+   ├── iPhone
+   ├── Watch
+   └── IoT devices
 
-### Realistic attacker models
-- Compromised IoT device inside LAN (most common)
-- Guest device on Wi-Fi
-- Malware on one endpoint scanning laterally
-- (less likely) external attacker unless router exposes WAN management or UPnP maps ports
+⸻
 
-## Risk Assessment
-Method: simple qualitative scoring (Impact × Likelihood).
+3️⃣ Router Exposed Services (LAN-side)
+Port Service Risk
+23/tcp Telnet Critical – plaintext admin surface
+1900/tcp UPnP High – dynamic port mapping risk
+22/tcp SSH Medium – depends on config
+53/tcp DNS Medium – core infra component
+80/443 Admin UI Medium – depends on auth + firmware
 
-| Finding | Impact | Likelihood | Notes |
-|--------|--------|------------|------|
-| Telnet enabled | High | High | plaintext + common router attack path |
-| UPnP enabled | High | Medium | can open ports; also LAN abuse vectors |
-| Router admin UI reachable on LAN | Medium | Medium | depends on creds, firmware, TLS |
-| SSH enabled | Medium | Low–Medium | ok if key-only + LAN-only + strong config |
-| Device discovery visible in router UI | Low | High | expected; risk depends on segmentation |
+4️⃣ Segmentation Validation
 
-## Prioritized Backlog (what to do next)
+Test performed
 
-### P0 (do first)
-- Disable Telnet (23/tcp) or restrict to isolated admin VLAN only.
-- Disable UPnP (1900/tcp / IGD behavior) unless explicitly needed.
+From Guest SSID:
+	•	Attempted ICMP to 192.168.0.2 (trusted device)
+	•	Attempted LAN scanning
+	•	Attempted service probing
 
-### P1
-- Harden router admin access:
-  - strong unique admin password
-  - disable remote management from WAN
-  - restrict admin UI to a single trusted device if possible
-- Update firmware; disable WPS; review firewall defaults.
+Result
+	•	❌ Guest → LAN blocked
+	•	❌ Guest → Router LAN services blocked (except WAN access)
+	•	✔ Guest → Internet allowed
 
-### P2
-- Segment network:
-  - separate IoT/guest from trusted devices
-  - client isolation for guest/IoT SSIDs
+Interpretation
 
-### P3
-- Monitoring & drift:
-  - keep running periodic scans + policy checks
-  - alert on new open ports / new hosts
+Router implements:
 
-## Target State (definition of done for Phase 04/05)
-- No Telnet; UPnP off
-- Admin UI restricted + HTTPS only
-- Separate Wi-Fi/segments for IoT/Guest
-- Repeatable audit script produces:
-  - sanitized evidence
-  - policy report
-  - drift signal (new services/hosts)
+Firewall-based isolation (one-way policy)
 
-## Execution Notes (to be filled after we run)
-Add here:
-- commands executed
-- timestamps (sanitized)
-- outputs summary
-- decisions made + reasoning
+This is NOT VLAN segmentation but is effective for home-level risk reduction.
+
+⸻
+
+5️⃣ Threat Modeling (Home Context)
+
+Assets
+	•	Work laptop (corporate risk)
+	•	Personal devices (financial risk)
+	•	Phones (MFA compromise vector)
+	•	IoT devices (weakest link)
+
+Realistic attacker models
+	1.	Compromised IoT device pivoting laterally
+	2.	Guest device scanning LAN
+	3.	Malware on one endpoint
+	4.	WAN exposure via UPnP misconfiguration
+
+⸻
+
+6️⃣ Quantitative Risk Matrix
+
+Risk = Impact (1–5) × Likelihood (1–5)
+Finding Impact Likelihood Score Severity
+Telnet enabled 5 4 20 Critical
+UPnP enabled 4 3 12 High
+Admin UI LAN-accessible 4 3 12 High
+SSH enabled 3 2 6 Medium
+DNS exposed internally 3 3 9 Medium
+Guest isolation validated Risk reduced — — Positive
+
+7️⃣ Security Posture Summary
+
+Before Guest Validation
+	•	Flat network assumption
+	•	High lateral movement potential
+
+After Validation
+	•	Guest → LAN pivot blocked
+	•	IoT isolation possible via Guest SSID reuse
+	•	Lateral risk partially mitigated
+
+Remaining issues:
+	•	Telnet exposure
+	•	UPnP exposure
+	•	No true segmentation (VLAN)
+
+⸻
+
+8️⃣ Prioritized Hardening Backlog
+
+P0 – Immediate
+	•	Disable Telnet
+	•	Disable UPnP
+
+P1 – Administrative Hardening
+	•	Strong unique admin password
+	•	Disable WAN remote management
+	•	Firmware update
+	•	Disable WPS
+
+P2 – Segmentation Strategy
+	•	Move IoT devices to Guest SSID
+	•	Keep work/personal on Main LAN
+
+P3 – Monitoring & Drift
+	•	Scheduled audit execution
+	•	Track new open ports
+	•	Track new hosts
+
+⸻
+
+9️⃣ Target State (Definition of Done)
+
+✔ Telnet disabled
+✔ UPnP disabled
+✔ Admin interface restricted
+✔ IoT isolated
+✔ Repeatable audit pipeline
+✔ Drift detection operational
+
+⸻
+
+🔟 Maturity Assessment
+Domain Status
+Enumeration Automated
+Risk scoring Defined
+Segmentation Basic firewall isolation
+Monitoring Script-based
+Enterprise readiness Partial
+
