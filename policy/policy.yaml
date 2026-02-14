@@ -1,0 +1,6 @@
+router:
+  forbidden_tcp_ports: [23, 1900]
+  allowed_tcp_ports: [22, 53, 80, 443]
+  notes:
+    "23": "Telnet is plaintext and should be disabled."
+    "1900": "UPnP can expose services automatically."

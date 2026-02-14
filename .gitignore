@@ -6,3 +6,7 @@ evidence/raw/
 
 # macOS
 .DS_Store
+
+.venv/
+
+policy/targets.local.yaml
